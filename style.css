@@ -192,7 +192,7 @@ body {
     }
 }
 
-#heartsFall {
+#heartsFalling {
     margin: 3em auto;
     background-color: hsl(from #e84757 h s l / 100%);
     color: hsl(from var(--font-color) h s l / 75%);
@@ -204,13 +204,13 @@ body {
     cursor: pointer;
 }
 
-#heartsFall span:first-of-type {
+#heartsFalling span:first-of-type {
     position: absolute;
     transform: translateY(-50%);
     left: 1em;
 }
 
-#heartsFall span:last-of-type {
+#heartsFalling span:last-of-type {
     position: absolute;
     transform: translateY(-50%);
     right: 1em;
