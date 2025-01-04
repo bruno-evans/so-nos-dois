@@ -77,7 +77,7 @@ body {
 }
 
 .img-display ul li.active {
-    transition: background-color, transform var(--time-color-transition);
+    transition: background-color var(--time-color-transition), transform var(--time-color-transition);
     background-color: var(--font-color);
     transform: scale(1.5);
 }
@@ -214,6 +214,17 @@ body {
     position: absolute;
     transform: translateY(-50%);
     right: 1em;
+}
+
+#heartsFalling.disable {
+    transition: transform 1s, opacity 1s;
+    transform: scale(0.8);
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#heartsFalling.disable:hover {
+    cursor: wait;
 }
 
 #hiddenMusic {

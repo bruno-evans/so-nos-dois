@@ -1,7 +1,6 @@
 let imgActive = 1;
 let quantImg = 5;
 let initDate = new Date(2023, 7, 5, 10, 30);
-const timer = document.getElementById('time');
 
 window.onload(allFunctions());
 
@@ -56,11 +55,13 @@ function calculateTime() {
 
     year += nowDate.getFullYear() - initDate.getFullYear();
     
-    timer.innerHTML = `~ ${year} ano, ${month} meses, ${day} dias<br>${hour} horas, ${min} minutos<br>e ${sec} segundos<br><span id="love">&#x1F495;</span>`;
+    document.getElementById('time').innerHTML = `~ ${year} ano, ${month} meses, ${day} dias<br>${hour} horas, ${min} minutos<br>e ${sec} segundos<br><span id="love">&#x1F495;</span>`;
 }
 
 function heartsFall(numHearts = 100) {
     let region = document.querySelector('body');
+
+    document.getElementById('heartsFalling').classList.add('disable');
 
     for(i=0; i<numHearts; i++) {
         let heart = document.createElement('span')
@@ -73,10 +74,17 @@ function heartsFall(numHearts = 100) {
         region.appendChild(heart);
     }
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+
     setTimeout(() => {
         let allHearts = document.querySelectorAll('.heart');
         allHearts.forEach((heart) => {
             heart.remove();
         })
+
+        document.getElementById('heartsFalling').classList.remove('disable');
     }, 7000)
 }
