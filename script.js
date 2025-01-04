@@ -72,4 +72,11 @@ function heartsFall(numHearts = 100) {
         heart.style.fontSize = `${Math.random() * 2 + 0.5}em`
         region.appendChild(heart);
     }
+
+    setTimeout(() => {
+        let allHearts = document.querySelectorAll('.heart');
+        allHearts.forEach((heart) => {
+            heart.remove();
+        })
+    }, 7000)
 }
